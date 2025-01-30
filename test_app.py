@@ -1,7 +1,5 @@
 import sqlite3
 import pytest
-from bank import create_account, deposit, withdraw, view_transactions, balance
-
 
 @pytest.fixture
 def setup_db():

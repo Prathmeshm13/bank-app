@@ -96,7 +96,7 @@ def test_transactions_log(setup_db):
     withdraw(conn, account_id, 100)
 
     cursor = conn.cursor()
-    cursor.execute("SELECT COUN FROM transactions WHERE account_id = ?", (account_id,))
+    cursor.execute("SELECT COUNT(*) FROM transactions WHERE account_id = ?", (account_id,))
     transactions_count = cursor.fetchone()[0]
     assert transactions_count == 3  # 1 deposit (initial) + 1 deposit + 1 withdrawal
 
